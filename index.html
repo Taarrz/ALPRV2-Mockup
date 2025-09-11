@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ALPRV2 Mockup</title>
+  <style>
+    body { font-family: Arial; text-align: center; margin: 50px; }
+    .box { border: 1px solid #ccc; padding: 20px; margin: 20px auto; width: 300px; border-radius: 10px; }
+    input, button { margin: 10px; padding: 10px; width: 90%; }
+  </style>
+</head>
+<body>
+  <h1>Automatic License Plate Recognition (Mockup)</h1>
+
+  <div class="box" id="loginBox">
+    <h2>Login</h2>
+    <input type="text" placeholder="Username"><br>
+    <input type="password" placeholder="Password"><br>
+    <button onclick="goToDashboard()">Login</button>
+  </div>
+
+  <div class="box" id="dashboard" style="display:none;">
+    <h2>Dashboard</h2>
+    <input type="file" id="fileInput"><br>
+    <button onclick="upload()">Upload</button>
+    <p id="status"></p>
+  </div>
+
+  <script>
+    function goToDashboard() {
+      document.getElementById('loginBox').style.display = 'none';
+      document.getElementById('dashboard').style.display = 'block';
+    }
+    function upload() {
+      let file = document.getElementById('fileInput').files[0];
+      if (file) {
+        document.getElementById('status').innerText = "อัปโหลดแล้ว: " + file.name;
+      } else {
+        document.getElementById('status').innerText = "กรุณาเลือกไฟล์ก่อน";
+      }
+    }
+  </script>
+</body>
+</html>
