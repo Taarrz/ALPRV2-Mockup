@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - Settings</title>
+  <style>
+    body { margin:0; font-family:Arial, sans-serif; background:#f8f9fa; }
+    .navbar { background:#0d47a1; color:white; padding:10px 20px; display:flex; justify-content:space-between; align-items:center; }
+    .navbar a { color:white; text-decoration:none; }
+    .sidebar { width:220px; background:#fff; border-right:1px solid #ddd; height:100vh; float:left; position:fixed; padding:20px 0; }
+    .sidebar h3 { padding-left:20px; color:#333; }
+    .sidebar a { display:block; padding:12px 20px; text-decoration:none; color:#333; }
+    .sidebar a:hover { background:#eee; }
+    .submenu a { font-size: 14px; padding:8px 20px; }
+    .content { margin-left:220px; padding:20px; }
+    label { display:block; margin-top:15px; }
+    input { padding:8px; width:300px; }
+    button { margin-top:15px; padding:10px 20px; background:#0d47a1; color:white; border:none; border-radius:5px; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <span><b>ALPR VER 2</b> › Settings</span>
+    <a href="user-home.html">Switch to User</a>
+  </div>
+
+  <div class="sidebar">
+    <h3>Quick Access ⭐</h3>
+    <a href="index.html">🏠 Home</a>
+    <div class="dropdown">
+      <a href="#" onclick="toggleDropdown(event)">🔧 Management ▼</a>
+      <div class="submenu" style="display:none; padding-left:20px;">
+        <a href="admin-users.html">👥 Users</a>
+        <a href="admin-subscription.html">📑 Subscription</a>
+      </div>
+    </div>
+    <a href="admin-logs.html">📄 Logs</a>
+    <a href="admin-settings.html">⚙️ Settings</a>
+  </div>
+
+  <div class="content">
+    <h2>Admin Settings</h2>
+    <label>System Name</label>
+    <input type="text" value="ALPR VER 2">
+    <label>API Key</label>
+    <input type="text" value="1234-5678-ABCD">
+    <button>Save Settings</button>
+  </div>
+
+  <script>
+    function toggleDropdown(e){e.preventDefault();let s=e.target.nextElementSibling;s.style.display=s.style.display==="none"?"block":"none";}
+  </script>
+</body>
+</html>
